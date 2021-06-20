@@ -35,8 +35,6 @@ class AdjacencyListTest {
 
     @Test
     void testToString() {
-
-
         this.graph.addEdge(melbourne, sydney, false);
         this.graph.addEdge(melbourne, act, false);
         this.graph.addEdge(act, brisbane, false);
