@@ -18,7 +18,6 @@ public interface Graph<T> {
 
     boolean hasEdge(T source, T destination);
 
-    List<T> search(T source);
-
+    Set<T> getAllVertices();
 
 }

@@ -1,23 +1,19 @@
 package com.g4g.graphs.adjList;
 
-import com.g4g.graphs.BFSAlgorithm;
 import com.g4g.graphs.Graph;
 
 import java.util.*;
 
 public class AdjacencyList<T> implements Graph<T> {
     private final Map<T, List<T>> graph;
-    private final BFSAlgorithm<T> bfsAlgorithm;
 
     public AdjacencyList() {
         this.graph = new HashMap<>();
-        this.bfsAlgorithm = new BFSAlgorithmImpl(this);
     }
 
     @Override
     public void addVertex(T s) {
         this.graph.put(s, new LinkedList<>());
-        this.bfsAlgorithm.initVertex(s);
     }
 
     @Override
@@ -67,8 +63,8 @@ public class AdjacencyList<T> implements Graph<T> {
     }
 
     @Override
-    public List<T> search(T source) {
-       return  this.bfsAlgorithm.search(source);
+    public Set<T> getAllVertices() {
+        return this.graph.keySet();
     }
 
     @Override
